@@ -633,6 +633,14 @@ public class GenerateICSFiles {
 		
 	}
 
+	
+	//for page tokens or any other params we need a Map of String and Object
+	//check : https://developers.google.com/calendar/v3/pagination for example on pagination
+	//sample :
+	//GET /calendars/primary/events?maxResults=10&singleEvents=true
+	//Result contains
+	//"nextPageToken":"CiAKGjBpNDd2Nmp2Zml2cXRwYjBpOXA",
+	//next call -> GET /calendars/primary/events?maxResults=10&singleEvents=true&pageToken=CiAKGjBpNDd2Nmp2Zml2cXRwYjBpOXA
 	private static String sendRequest(final String url, final String jwtToken, final String nextPageToken)
 			throws ParseException, IOException {
 
