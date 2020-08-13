@@ -73,7 +73,7 @@ public class GenerateICSFiles {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
-		String jwtToken = "Bearer ya29.a0AfH6SMDyjz8jgw802dUtKFbXfJoZ7Rc265-MB534pvLYKq4sJjXe-3tsF7G4BSl3TpEEWAy5y2BF9An4iGq1ljG5TmUoLicPYpChDtlWVAcIm956b03yN2a6KpJCY6t5RWVrA8lFPpzQCmWQaytJ2ldFNJ_mr9Ym5AT-";
+		String jwtToken = "Bearer ya29.a0AfH6SMCp3oDU1g_apqaORCpeCWJ7seKua9w6dtVuWskDjcZMym00-fzcfIhvvCHjezTzJlOt7y-GxlIDC7l6d1w3O4-J1Kj5OfCy346UMkfMuAm7qK5sPwbdUvViAuXsMUoV72h4adq_hflCWJiVduA-KWU9QMeOdmg";
 
 		GenerateICSFiles c = new GenerateICSFiles();
 		c.generateICS(jwtToken);
@@ -131,7 +131,7 @@ public class GenerateICSFiles {
 //				System.out.println(calendarListEntryNode.get(i).get("id") +" ----- "+calendarListEntryNode.get(i).get("summary") 
 //						+"  -------  "+calendarListEntryNode.get(i).get("timeZone").toString());
 				
-				if(calendarListEntryNode.get(i).get("summary").asText().contains("sreejan"))
+//				if(calendarListEntryNode.get(i).get("summary").asText().contains("sreejan"))
 				//get the events for this calendar ID 
 				createICS(calendarListEntryNode.get(i),jwtToken);
 				i++;
@@ -443,7 +443,6 @@ public class GenerateICSFiles {
 				break;
 				
 			case "organizer":
-				System.out.println("*****event.get(\"organizer\")**** "+event.get("organizer"));
 				vEvent.getProperties().add(new Organizer());
 				((Property) vEvent.getProperties().getProperty(Property.ORGANIZER)).setValue("mailto:"+event.get("organizer").get("email").asText() );
 				
@@ -643,7 +642,7 @@ public class GenerateICSFiles {
 		try {
 
 			HttpGet request = new HttpGet(url);
-//			System.out.println("Calling end poitn ::: "+url);
+			System.out.println("Calling end poitn ::: "+url);
 
 			// add request headers
 			request.addHeader(HttpHeaders.AUTHORIZATION, jwtToken);
