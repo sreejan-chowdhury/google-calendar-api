@@ -73,7 +73,7 @@ public class GenerateICSFiles {
 
 	public static void main(String[] args) throws IOException, InterruptedException {
 
-		String jwtToken = "Bearer ya29.a0AfH6SMCp3oDU1g_apqaORCpeCWJ7seKua9w6dtVuWskDjcZMym00-fzcfIhvvCHjezTzJlOt7y-GxlIDC7l6d1w3O4-J1Kj5OfCy346UMkfMuAm7qK5sPwbdUvViAuXsMUoV72h4adq_hflCWJiVduA-KWU9QMeOdmg";
+		String jwtToken = "Bearer ya29.a0AfH6SMCNsxeze4Qu7Ici35EBz7EzyU5JMzIY7CQeiyqB4MpSOxBjZe7ee8hqw-V5Tf0ysIuoyCNX8tPsmaFikHldFqrqnhpii0VEOZxdAyk18W-JkaoP4GLEw5yyvZvYNdPR-DxB8DI68hFqcnhaEciSd5LXuCFtRbY";
 
 		GenerateICSFiles c = new GenerateICSFiles();
 		c.generateICS(jwtToken);
@@ -616,7 +616,7 @@ public class GenerateICSFiles {
 		        
 		    }
 			
-            bw = new BufferedWriter(new FileWriter(path+"/"+fileName));;
+            bw = new BufferedWriter(new FileWriter(path+"/"+fileName+ICS_FILE_EXTENSION));;
             
             bw.write(fileContent);
             bw.close();
